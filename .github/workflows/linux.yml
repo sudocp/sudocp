@@ -1,0 +1,90 @@
+name: Update Daily Linux Tip
+
+on:
+  schedule:
+    - cron: '0 8 * * *'
+  workflow_dispatch:
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Generate Linux Tip
+      id: tip
+      run: |
+        tips=(
+          "Use Ctrl+R to search command history"
+          "Clear terminal with Ctrl+L"
+          "Stop running process with Ctrl+C"
+          "Repeat last command with !!"
+          "Go back to previous directory with cd -"
+          "Exit terminal with Ctrl+D"
+          "Search history with history | grep 'keyword'"
+          "Move to line start with Ctrl+A"
+          "Move to line end with Ctrl+E"
+          "Delete to line start with Ctrl+U"
+          "Delete to line end with Ctrl+K"
+          "Undo last action with Ctrl+_"
+          "Paste last argument with Alt+."
+          "Run as root with sudo !!"
+          "Create dir and enter: mkdir dir && cd $_"
+          "Go home with cd ~"
+          "List all files: ls -la"
+          "Show current path: pwd"
+          "Copy file: cp source dest"
+          "Move/rename: mv old new"
+          "Remove file: rm file"
+          "Remove directory: rm -r dir"
+          "Create symlink: ln -s target link"
+          "View file: cat file"
+          "View file start: head file"
+          "View file end: tail file"
+          "Monitor file: tail -f file"
+          "Search in file: grep pattern file"
+          "Find by name: find . -name 'name'"
+          "Locate command: which command"
+          "Show manual: man command"
+          "Command description: whatis command"
+          "View history: history"
+          "Run history command: !number"
+          "Run in background: command &"
+          "Bring to foreground: fg"
+          "List processes: ps aux"
+          "Kill process: kill PID"
+          "System info: uname -a"
+          "Disk usage: df -h"
+          "Directory sizes: du -sh *"
+          "Test connection: ping host"
+          "Network connections: netstat -tuln"
+          "Download file: wget url"
+          "Download with curl: curl -O url"
+          "Show calendar: cal"
+          "Show date/time: date"
+        )
+        
+        random_tip=${tips[$RANDOM % ${#tips[@]}]}
+        echo "tip=$random_tip" >> $GITHUB_OUTPUT
+
+    - name: Update README
+      run: |
+        border=$(printf '%*s\n' 80 | tr ' ' '═')
+        tip_block="$border\n[💡] TIP OF THE DAY\n$border\n> ${{ steps.tip.outputs.tip }}\n$border"
+        
+        sed -i "/<!-- DAILY LINUX TIP START -->/,/<!-- DAILY LINUX TIP END -->/c\\
+        <!-- DAILY LINUX TIP START -->\\
+        $(echo -e "$tip_block")\\
+        <!-- DAILY LINUX TIP END -->" README.md
+
+    - name: Commit changes
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add README.md
+        git diff --staged --quiet || git commit -m "Update daily Linux tip"
+        git push
