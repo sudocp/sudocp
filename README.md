@@ -30,6 +30,12 @@ $ echo "Heavenly angels are warning against chipping and enslaving of people!"
 | 🟨   | Python        | Scripting and automation             | Intermediate |
 | 🟨   | Bash          | Shell scripting and CLI tools        | Intermediate |
 | 🟨   | Linux         | System administration and CLI        | Intermediate |
+
+═════════════════════════════════════════════════════════════════════════════════
+[💡] TIP OF THE DAY
+═════════════════════════════════════════════════════════════════════════════════
+> Use Ctrl+R to search command history in bash
+═════════════════════════════════════════════════════════════════════════════════
 ```
 
 <picture>
