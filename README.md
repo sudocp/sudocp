@@ -34,7 +34,7 @@ $ echo "Heavenly angels are warning against chipping and enslaving of people!"
 ═════════════════════════════════════════════════════════════════════════════════
 [💡] TIP OF THE DAY
 ═════════════════════════════════════════════════════════════════════════════════
-> Use Ctrl+R to search command history in bash
+> Run history command: !number
 ═════════════════════════════════════════════════════════════════════════════════
 ```
 
