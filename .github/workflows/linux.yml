@@ -73,13 +73,7 @@ jobs:
 
     - name: Update README
       run: |
-        border=$(printf '%*s\n' 80 | tr ' ' '═')
-        tip_block="$border\n[💡] TIP OF THE DAY\n$border\n> ${{ steps.tip.outputs.tip }}\n$border"
-        
-        sed -i "/<!-- DAILY LINUX TIP START -->/,/<!-- DAILY LINUX TIP END -->/c\\
-        <!-- DAILY LINUX TIP START -->\\
-        $(echo -e "$tip_block")\\
-        <!-- DAILY LINUX TIP END -->" README.md
+        sed -i '/\[💡\] TIP OF THE DAY/,/═════════════════════════════════════════════════════════════════════════════════/ s/^> .*/> ${{ steps.tip.outputs.tip }}/' README.md
 
     - name: Commit changes
       run: |
