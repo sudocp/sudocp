@@ -1,30 +1,41 @@
-**`Heavenly angels are warning against chipping and enslaving of people!`**
+```bash
 
-### 🛠️ Tools & Technologies
+       /\         kemal@arch
+      /  \        os     Arch Linux
+     /\   \       host   x86_64
+    /      \      kernel 6.16.4-arch1-1
+   /   ,,   \     uptime 14h 2m
+  /   |  |  -\    pkgs   1295
+ /_-''    ''-_\   memory 7947M / 15779M
 
-<img align="left" alt="TypeScript" width="30px" style="padding-right:10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-plain.svg" />
-<img align="left" alt="Linux" width="30px" style="padding-right:10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" />
-<img align="left" alt="JavaScript" width="30px" style="padding-right:10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-plain.svg" />
-<img align="left" alt="React" width="30px" style="padding-right:10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" />
-<img align="left" alt="Python" width="30px" style="padding-right:10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-plain.svg" />
-<img align="left" alt="Go" width="30px" style="padding-right:10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg" />
-<img align="left" alt="Bash" width="30px" style="padding-right:10px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" />
+$ echo "Heavenly angels are warning against chipping and enslaving of people!"
+> WARNING: Divine intervention detected! System integrity compromised...
 
-<br />
-<br />
+═════════════════════════════════════════════════════════════════════════════════
+[🔧] TOOLS & TECHNOLOGIES 
+═════════════════════════════════════════════════════════════════════════════════
+[📦] Language Stack:
+  • TypeScript   • JavaScript   • Python   • Bash
+  • Linux CLI     • React
+[⚙]  Frameworks & Systems:
+  • React Ecosystem   • Linux Kernel   • Web APIs
 
-### 📘 Currently Learning
-
-| Icon | Technology | Description | Level |
-|------|------------|-------------|--------|
-| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-plain.svg" width="25px" /> | **TypeScript** | Exploring React and backend services | 🟢 Beginner |
-| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" width="25px" /> | **Linux** | Working with CLI, bash scripting, and system management | 🟡 Intermediate |
-| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg" width="25px" /> | **Go** | Learning concurrency, goroutines, and building Web APIs | 🟢 Beginner |
-
-<br />
+═════════════════════════════════════════════════════════════════════════════════
+[📚] CURRENTLY LEARNING 
+═════════════════════════════════════════════════════════════════════════════════
+| Icon | Technology    | Description                          | Level        |
+|------|---------------|--------------------------------------|--------------|
+| 🟩   | TypeScript    | Type-safe JavaScript for web dev     | Beginner     |
+| 🟩   | React         | Building interactive UIs             | Beginner     |
+| 🟨   | Python        | Scripting and automation             | Intermediate |
+| 🟨   | Bash          | Shell scripting and CLI tools        | Intermediate |
+| 🟨   | Linux         | System administration and CLI        | Intermediate |
+```
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/jrbemal/jrbemal/output/github-snake-dark.svg" />
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/jrbemal/jrbemal/output/github-snake.svg" />
   <img alt="github-snake" src="https://raw.githubusercontent.com/jrbemal/jrbemal/output/github-snake.svg" />
 </picture>
+
+
