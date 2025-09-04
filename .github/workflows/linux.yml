@@ -30,8 +30,8 @@ jobs:
           "Search history with history | grep 'keyword'"
           "Move to line start with Ctrl+A"
           "Move to line end with Ctrl+E"
-          "Delete to line start with Ctrl+U"
-          "Delete to line end with Ctrl+K"
+          "Delete to line start: Ctrl+U"
+          "Delete to line end: Ctrl+K"
           "Undo last action with Ctrl+_"
           "Paste last argument with Alt+."
           "Run as root with sudo !!"
@@ -52,7 +52,6 @@ jobs:
           "Find by name: find . -name 'name'"
           "Locate command: which command"
           "Show manual: man command"
-          "Command description: whatis command"
           "View history: history"
           "Run history command: !number"
           "Run in background: command &"
@@ -69,7 +68,6 @@ jobs:
           "Show calendar: cal"
           "Show date/time: date"
         )
-        
         random_tip=${tips[$RANDOM % ${#tips[@]}]}
         echo "tip=$random_tip" >> $GITHUB_OUTPUT
 
@@ -86,7 +84,6 @@ jobs:
         } 
         { print } 
         ' README.md > README_new.md
-        
         mv README_new.md README.md
 
     - name: Commit changes
@@ -94,17 +91,8 @@ jobs:
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git add README.md
-        
-        # Değişiklik varsa devam et
         if ! git diff --staged --quiet; then
           git commit -m "Update daily Linux tip"
-          
-          # Remote değişikliklerini çek
-          git fetch origin
-          
-          # Rebase yaparak çakışmaları önle
-          git rebase origin/main
-          
-          # Değişiklikleri push et
-          git push origin main
+          git pull --rebase origin main
+          git push origin main --force-with-lease
         fi
