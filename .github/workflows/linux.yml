@@ -27,7 +27,6 @@ jobs:
           "Repeat last command with !!"
           "Go back to previous directory with cd -"
           "Exit terminal with Ctrl+D"
-          "Search history with history | grep 'keyword'"
           "Move to line start with Ctrl+A"
           "Move to line end with Ctrl+E"
           "Delete to line start: Ctrl+U"
@@ -43,30 +42,18 @@ jobs:
           "Move/rename: mv old new"
           "Remove file: rm file"
           "Remove directory: rm -r dir"
-          "Create symlink: ln -s target link"
           "View file: cat file"
           "View file start: head file"
           "View file end: tail file"
           "Monitor file: tail -f file"
           "Search in file: grep pattern file"
           "Find by name: find . -name 'name'"
-          "Locate command: which command"
-          "Show manual: man command"
-          "View history: history"
-          "Run history command: !number"
-          "Run in background: command &"
-          "Bring to foreground: fg"
           "List processes: ps aux"
           "Kill process: kill PID"
           "System info: uname -a"
+          "Show date and time: date"
           "Disk usage: df -h"
           "Directory sizes: du -sh *"
-          "Test connection: ping host"
-          "Network connections: netstat -tuln"
-          "Download file: wget url"
-          "Download with curl: curl -O url"
-          "Show calendar: cal"
-          "Show date/time: date"
         )
         random_tip=${tips[$RANDOM % ${#tips[@]}]}
         echo "tip=$random_tip" >> $GITHUB_OUTPUT
@@ -95,4 +82,3 @@ jobs:
           git commit -m "Update daily Linux tip"
           git pull --rebase origin main
           git push origin main --force-with-lease
-        fi
