@@ -20,7 +20,7 @@ jobs:
       - name: Generate Linux Tip
         id: tip
         run: |
-        tips=(
+          tips=(
           "Use Ctrl+R to search command history"
           "Clear terminal with Ctrl+L"
           "Stop running process with Ctrl+C"
