@@ -14,6 +14,8 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
 
     - name: Generate Linux Tip
       id: tip
@@ -73,7 +75,6 @@ jobs:
 
     - name: Update README
       run: |
-        # Önce mevcut ipucu satırını tam olarak bulalım
         awk -v new_tip="> ${{ steps.tip.outputs.tip }}" '
         /\[💡\] TIP OF THE DAY/ { 
             in_section = 1 
@@ -93,5 +94,17 @@ jobs:
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git add README.md
-        git diff --staged --quiet || git commit -m "Update daily Linux tip"
-        git push
+        
+        # Değişiklik varsa devam et
+        if ! git diff --staged --quiet; then
+          git commit -m "Update daily Linux tip"
+          
+          # Remote değişikliklerini çek
+          git fetch origin
+          
+          # Rebase yaparak çakışmaları önle
+          git rebase origin/main
+          
+          # Değişiklikleri push et
+          git push origin main
+        fi
