@@ -34,7 +34,7 @@ $ echo "Heavenly angels are warning against chipping and enslaving of people!"
 ═════════════════════════════════════════════════════════════════════════════════
 [💡] TIP OF THE DAY
 ═════════════════════════════════════════════════════════════════════════════════
-> Remove file: rm file
+> Create dir and enter: mkdir dir && cd /usr/bin/bash
 ═════════════════════════════════════════════════════════════════════════════════
 ```
 
