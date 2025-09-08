@@ -34,7 +34,7 @@ $ echo "Heavenly angels are warning against chipping and enslaving of people!"
 ═════════════════════════════════════════════════════════════════════════════════
 [💡] TIP OF THE DAY
 ═════════════════════════════════════════════════════════════════════════════════
-> Create dir and enter: mkdir dir && cd /usr/bin/bash
+> View file start: head file
 ═════════════════════════════════════════════════════════════════════════════════
 ```
 
