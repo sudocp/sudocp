@@ -1,0 +1,86 @@
+name: Update Daily Tip
+
+on:
+  schedule:
+    - cron: "0 8 * * *"
+  workflow_dispatch:
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Generate Tip
+        id: tip
+        run: |
+          tips=(
+            "ctrl+r: search command history"
+            "ctrl+l: clear terminal"
+            "ctrl+c: stop running process"
+            "!! : repeat last command"
+            "cd - : go back to previous directory"
+            "ctrl+d: exit terminal"
+            "ctrl+a: move to line start"
+            "ctrl+e: move to line end"
+            "ctrl+u: delete to line start"
+            "ctrl+k: delete to line end"
+            "ctrl+_ : undo last action"
+            "alt+. : paste last argument"
+            "sudo !! : run last command as root"
+            "mkdir dir && cd $_ : create dir and enter"
+            "cd ~ : go home"
+            "ls -la : list all files"
+            "pwd : show current path"
+            "cp source dest : copy file"
+            "mv old new : move/rename file"
+            "rm file : remove file"
+            "rm -r dir : remove directory"
+            "cat file : view file"
+            "head file : view file start"
+            "tail file : view file end"
+            "tail -f file : monitor file"
+            "grep pattern file : search in file"
+            "find . -name 'name' : find by name"
+            "ps aux : list processes"
+            "kill PID : kill process"
+            "uname -a : system info"
+            "date : show date and time"
+            "df -h : disk usage"
+            "du -sh * : directory sizes"
+          )
+
+          random_tip=${tips[$RANDOM % ${#tips[@]}]}
+          echo "tip=$random_tip" >> $GITHUB_OUTPUT
+
+      - name: Update README
+        run: |
+          awk -v new_tip="> ${{ steps.tip.outputs.tip }}" '
+          /\[💡\] TIP OF THE DAY/ {
+              in_section = 1
+          }
+          in_section && /^> / {
+              print new_tip
+              in_section = 0
+              next
+          }
+          { print }
+          ' README.md > README_new.md
+          mv README_new.md README.md
+
+      - name: Commit changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add README.md
+          if ! git diff --staged --quiet; then
+            git commit -m "Update daily Linux tip"
+            git pull --rebase origin main
+            git push origin main --force-with-lease
+          fi
