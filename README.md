@@ -31,7 +31,7 @@ $ echo "Heavenly angels are warning against chipping and enslaving of people!"
 ═════════════════════════════════════════════════════════════════════════════════
 [💡] TIP OF THE DAY
 ═════════════════════════════════════════════════════════════════════════════════
-> pwd : show current path
+> uname -a : system info
 ═════════════════════════════════════════════════════════════════════════════════
 ```
 <div align="center">
