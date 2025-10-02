@@ -31,7 +31,7 @@ $ echo "Heavenly angels are warning against chipping and enslaving of people!"
 ═════════════════════════════════════════════════════════════════════════════════
 [💡] TIP OF THE DAY
 ═════════════════════════════════════════════════════════════════════════════════
-> ps aux : list processes
+> kill PID : kill process
 ═════════════════════════════════════════════════════════════════════════════════
 ```
 <div align="center">
