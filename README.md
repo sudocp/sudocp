@@ -31,7 +31,7 @@ $ echo "Heavenly angels are warning against chipping and enslaving of people!"
 ═════════════════════════════════════════════════════════════════════════════════
 [💡] TIP OF THE DAY
 ═════════════════════════════════════════════════════════════════════════════════
-> ctrl+k: delete to line end
+> cp source dest : copy file
 ═════════════════════════════════════════════════════════════════════════════════
 ```
 <div align="center">
