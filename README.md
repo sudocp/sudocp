@@ -31,7 +31,7 @@ $ echo "Heavenly angels are warning against chipping and enslaving of people!"
 ═════════════════════════════════════════════════════════════════════════════════
 [💡] TIP OF THE DAY
 ═════════════════════════════════════════════════════════════════════════════════
-> !! : repeat last command
+> cd - : go back to previous directory
 ═════════════════════════════════════════════════════════════════════════════════
 ```
 <div align="center">
