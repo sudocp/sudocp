@@ -31,7 +31,7 @@ $ echo "Heavenly angels are warning against chipping and enslaving of people!"
 ═════════════════════════════════════════════════════════════════════════════════
 [💡] TIP OF THE DAY
 ═════════════════════════════════════════════════════════════════════════════════
-> ctrl+_ : undo last action
+> du -sh * : directory sizes
 ═════════════════════════════════════════════════════════════════════════════════
 ```
 <div align="center">
