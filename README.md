@@ -31,7 +31,7 @@ $ echo "Heavenly angels are warning against chipping and enslaving of people!"
 ═════════════════════════════════════════════════════════════════════════════════
 [💡] TIP OF THE DAY
 ═════════════════════════════════════════════════════════════════════════════════
-> ctrl+r: search command history
+> rm -r dir : remove directory
 ═════════════════════════════════════════════════════════════════════════════════
 ```
 <div align="center">
