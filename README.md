@@ -31,7 +31,7 @@ $ echo "Heavenly angels are warning against chipping and enslaving of people!"
 ═════════════════════════════════════════════════════════════════════════════════
 [💡] TIP OF THE DAY
 ═════════════════════════════════════════════════════════════════════════════════
-> grep pattern file : search in file
+> cat file : view file
 ═════════════════════════════════════════════════════════════════════════════════
 ```
 <div align="center">
